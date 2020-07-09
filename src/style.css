@@ -1,0 +1,31 @@
+.title{
+    margin: 0 auto;
+    padding: 0;
+}
+div p{
+    background-color: aquamarine;
+    font-weight: 100;
+    
+}
+div h5{
+    background-color: cornflowerblue;
+    font-size: 25px;
+}
+div button{
+    margin: 5px 0 0 0;
+    font-size: 20px;
+    
+    background-color: darkgoldenrod;
+
+}
+div input{
+    margin: 5px 0 0 0;
+}
+.tombolnilai1{
+    margin: 5px 0 0 0;
+    background-color: coral;
+}
+.nilai{
+    margin: 20px 0 0 0;
+
+}

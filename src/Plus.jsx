@@ -5,8 +5,8 @@ class Plus extends React.Component{
         const {functionPlus, hasil} =this.props
         return(
             <div>
-            <h5>Hasil Penjumlahan = {hasil}</h5>
-            <button onClick={functionPlus}>Plus</button>
+            <h5>Hasil : {hasil}</h5>
+            <button onClick={functionPlus}>+</button>
             </div>
         )
     }
