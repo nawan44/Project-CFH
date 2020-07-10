@@ -8,6 +8,7 @@ import Plus from './Plus';
 import Minus from './Minus';
 import Multiplied from './Multiplied';
 import Divided from './Divided';
+import Category from './Category/'
 
 class App extends React.Component{
     constructor(){
@@ -68,7 +69,7 @@ class App extends React.Component{
     render(){
         return(
             <div>
-                <h1 className="title">Kalkultor React</h1>
+                {/* <h1 className="title">Kalkultor React</h1>
                 <div className="nilai">Nilai 1 : <br/>
                 <p> {this.state.nilai1}</p></div>
                
@@ -85,7 +86,9 @@ class App extends React.Component{
                <Plus functionPlus={this.functionPlus} hasil={this.state.hasil} />
                <Minus functionMinus={this.functionMinus}  />
                <Multiplied functionMultiplied={this.functionMultiplied} />
-               <Divided functionDivided={this.functionDivided} />
+               <Divided functionDivided={this.functionDivided} /> */}
+
+               <Category />
             </div>
         )
     }
