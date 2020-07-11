@@ -21,7 +21,8 @@ class Index extends React.Component{
                 {id : 5, initial : 'DRN', name: 'Drink', isActive:true}
             ],
             isShow:false,
-            categoryModel : this.itemModel
+            categoryModel : this.itemModel,
+            mode:''
         }
     }
     handlerCreate = () =>{
@@ -39,6 +40,7 @@ class Index extends React.Component{
         const selected = this.state.ListData.find(a  => a.id === id);
         this.setState({
             isShow: true,
+            mode:'Data berhasil diubah',
             categoryModel:selected
         })
     }
@@ -46,6 +48,16 @@ class Index extends React.Component{
         
         this.setState({
             isShow:false
+        })
+    }
+    handlerDelete =(data) =>{
+        const {ListData} =this.state;
+        const IndexData = ListData.findIndex (dt => dt.id === data.id);
+        if(window.confirm(`Apakah anda yakin untuk menghapus data ?  ${data.name}`)){
+        ListData.splice(IndexData, 1);
+        }
+        this.setState({
+            ListData:ListData
         })
     }
     functionChange = name => ({target:{value}}) => {
@@ -66,9 +78,21 @@ class Index extends React.Component{
     }
     functionSave = () => {
         const list = this.state.ListData;
- 
+        alert(this.state.mode);
 
-        list.push(this.state.categoryModel);
+        if(this.state.mode === 'create'){
+            list.push(this.state.categoryModel);
+        }
+        else{
+            const indexData = list.findIndex(dt => dt.id === this.state.categoryModel.id)
+            this.state.ListData[indexData]={
+                id:this.state.categoryModel.id,
+                initial:this.state.categoryModel.initial,
+                name:this.state.categoryModel.name,
+                isActive:this.state.categoryModel.isActive
+            }
+        }
+
         this.setState({
             ListData:list,
             isShow:false
@@ -105,7 +129,7 @@ class Index extends React.Component{
                                     <td>{data.name}</td>
                                     <td>{data.isActive.toString()}</td>
                                     <td><button onClick={()=>this.handlerEdit(data.id)}>Edit</button>
-                                        <button>Delete</button>
+                                        <button onClick={() => this.handlerDelete(data)}>Delete</button>
                                     </td>
                                 </tr>
                             )
