@@ -8,7 +8,8 @@ import Plus from './Plus';
 import Minus from './Minus';
 import Multiplied from './Multiplied';
 import Divided from './Divided';
-import Header from './Header'
+import Header from './Component/Header';
+import Sidebar from './Component/Sidebar';
 import Category from './Category/'
 
 class App extends React.Component{
@@ -88,8 +89,16 @@ class App extends React.Component{
                <Minus functionMinus={this.functionMinus}  />
                <Multiplied functionMultiplied={this.functionMultiplied} />
                <Divided functionDivided={this.functionDivided} /> */}
+            <div class="wrapper">
                 <Header/>
-               <Category />
+                <Sidebar/>
+                <div class="content-wrapper"> 
+                             <section class="content">
+                    <Category />
+                    </section>
+            </div>
+            </div>
+ 
             </div>
         )
     }
