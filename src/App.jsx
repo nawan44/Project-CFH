@@ -11,6 +11,7 @@ import Divided from './Divided';
 import Header from './Component/Header';
 import Sidebar from './Component/Sidebar';
 import Category from './Category/'
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 class App extends React.Component{
     constructor(){
@@ -89,16 +90,22 @@ class App extends React.Component{
                <Minus functionMinus={this.functionMinus}  />
                <Multiplied functionMultiplied={this.functionMultiplied} />
                <Divided functionDivided={this.functionDivided} /> */}
+            <BrowserRouter>
             <div class="wrapper">
                 <Header/>
                 <Sidebar/>
                 <div class="content-wrapper"> 
                              <section class="content">
+                                 <Switch>
+                                     <Route exact path='/category' component={Category}></Route>
+                                     <Route exact path='/datacovid' component={Increment}></Route>
+
                     <Category />
+                    </Switch>
                     </section>
             </div>
             </div>
- 
+            </BrowserRouter>
             </div>
         )
     }
