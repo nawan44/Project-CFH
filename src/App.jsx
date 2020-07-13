@@ -12,6 +12,7 @@ import Header from './Component/Header';
 import Sidebar from './Component/Sidebar';
 import Category from './Category/'
 import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import Covid from './Covid/'
 
 class App extends React.Component{
     constructor(){
@@ -98,7 +99,7 @@ class App extends React.Component{
                              <section class="content">
                                  <Switch>
                                      <Route exact path='/category' component={Category}></Route>
-                                     <Route exact path='/datacovid' component={Increment}></Route>
+                                     <Route exact path='/datacovid' component={Covid}></Route>
 
                     <Category />
                     </Switch>
